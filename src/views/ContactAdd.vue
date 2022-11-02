@@ -2,7 +2,6 @@
     <div class="page">
       <h4>Thêm liên hệ</h4>
       <ContactForm :contact="contact" @submit:contact="addContact" />
-      <p>{{ message }}</p>
     </div>
   </template>
   <script>
@@ -22,7 +21,7 @@
       async addContact(data) {
         try {
           await ContactService.create(data)
-          this.message = 'Liên hệ được cập nhật thành công.'
+          
         } catch (error) {
           console.log(error)
         }
